@@ -16,6 +16,9 @@ export const LandingPage = () => {
                 <Link href='/quiz'>
                     <p className="bg-green-500 text-white py-4 px-8 rounded hover:bg-green-800">Start Quiz</p>
                 </Link>
+                <Link href='questions/new' className="underline text-gray-500">
+                    Add questions
+                </Link>
             </div>
             <div className="flex-1 hidden md:flex">
                 <Image src='/side.png' alt="Avatar" className="object-cover w-full h-full" width={400} height={400} />

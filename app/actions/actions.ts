@@ -28,7 +28,7 @@ export async function createQuestion(formData: FormData) {
     
     await Promise.all([...promises, ...weightagePromises])
     .catch((error) => {
-      console.error("Error executing promises:", error);
+      return { error };
     });
     
   } catch (err: unknown) {
@@ -66,14 +66,17 @@ export async function updateQuestion(formData: FormData) {
 
       await Promise.all([...promises, ...weightagePromises])
       .catch((error) => {
-        console.error("Error executing promises:", error);
+        return { error };
       });
 
-      } catch (error) {
-        console.error('Error updating question:', error);
+    } catch (error) {
+      if(error instanceof Error) {
+        return { error: error.message };
       }
+      return { error: 'Something went wrong' };
+    }
 
-      redirect('/questions')
+    redirect('/questions')
 
 }
 
@@ -87,8 +90,10 @@ export async function deleteQuestion(id: string) {
     await client.del(questionKey);
 
   } catch (error) {
-    console.error('Error deleting question:', error);
-  }
+    if(error instanceof Error) {
+      return { error: error.message };
+    }
+    return { error: 'Something went wrong' };  }
 
   redirect('/questions')
 
