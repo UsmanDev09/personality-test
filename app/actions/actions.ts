@@ -5,12 +5,12 @@ import { redirect } from "next/navigation"
 
 export async function createQuestion(formData: FormData) {
   try {
-    const choices: any = []
-    const weightages: any = []
+    const choices: string[] = []
+    const weightages: string[] = []
 
     {[1, 2, 3, 4].forEach((number) => {
-      choices.push(formData.get(`choice${number}`))
-      weightages.push(formData.get(`weightage${number}`))
+      choices.push(formData.get(`choice${number}`) as string)
+      weightages.push(formData.get(`weightage${number}`) as string)
     })}
 
     const id = Date.now() + "" + Math.floor(Math.random()*10000000);
@@ -43,13 +43,13 @@ export async function createQuestion(formData: FormData) {
 
 export async function updateQuestion(formData: FormData) {
     try {
-      const choices: any = []
-      const weightages: any = []
+      const choices: string[] = []
+      const weightages: string[] = []
       const id = formData.get('id') as string;
 
       {[1, 2, 3, 4].forEach((number) => {
-        choices.push(formData.get(`choice${number}`))
-        weightages.push(formData.get(`weightage${number}`))
+        choices.push(formData.get(`choice${number}`) as string)
+        weightages.push(formData.get(`weightage${number}`) as string)
       })}
   
   

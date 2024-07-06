@@ -1,4 +1,4 @@
-import { EditQuestionsForm } from "@/app/components/Questions/EditQuestionsForm"
+import { EditQuestionsForm } from "@/app/components/Forms/EditQuestionsForm"
 
 export const dynamic = 'force-dynamic'
 
