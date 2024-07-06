@@ -3,10 +3,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 ## Please add your env file
+
+```
 REDIS_URL=#####
-REDIS_PASSWORD=####
+REDIS_PASSWORD=###
 REDIS_PORT=####
 CLIENT_URL=####
+```
 
 First, run the development server:
 
