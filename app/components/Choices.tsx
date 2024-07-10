@@ -2,6 +2,17 @@
 
 import { Choice } from "../types/types";
 
+/**
+ * Cards component which shows question and choices.
+ *
+ * @component
+ * @param {Object} choices - Choices with text and their weightage
+ * @param {Object} selectedChoices - State for all the selected choices
+ * @param {number} questionNumber - The current question number
+ * @param {function} [handleSelectedChoices] - Function to update the selected choices for each question
+ * 
+ */
+
 export const Choices = ({ choices, handleSelectedChoices, selectedChoices, questionNumber } : { choices: Choice[], handleSelectedChoices: (choice: Choice) => void, questionNumber: number, selectedChoices: Choice[] }) => {
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>, choice: Choice) => {

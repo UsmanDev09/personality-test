@@ -1,25 +1,25 @@
 import { updateQuestion } from '../../actions/actions';
-import { Choice, Question } from "@/app/types/types";
+import { Choice, Quiz } from "@/app/types/types";
 
-export const EditQuestionsForm = ({question}: {question: Question}) => {
+export const EditQuestionsForm = ({quiz}: {quiz: Quiz}) => {
 
     const updateQuestionAction = updateQuestion.bind(null)
     
      return (
         <form action={updateQuestionAction}>
             <div className="flex gap-4 flex-wrap mt-8">
-                <input type="hidden" name="id" defaultValue={question.id} />
+                <input type="hidden" name="id" defaultValue={quiz.id} />
                 <input
                     type="text"
                     required
                     name="question"
                     aria-label='Edit question'
-                    defaultValue={question.question}
+                    defaultValue={quiz.question}
                     placeholder="Enter Question"
                     className="w-full border-gray rounded-lg border border-stroke bg-gray-50 bg-white px-4 py-3 text-black focus:border-2 focus:border-black focus:ring-black focus:border-black focus-visible:outline-none"
                 />
                 <div className="flex flex-col flex-wrap gap-4" >
-                    {question.choices.map((choice: Choice, index: number) => {
+                    {quiz.choices.map((choice: Choice, index: number) => {
                         return (
                             <div key={index} className="flex flex-col gap-4">
                                 <input aria-label={`Edit choice ${index + 1}: ${choice.text}}`} name={`choice${index + 1}`} defaultValue={choice.text} className="block p-2.5 w-[400px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter choice"></input>

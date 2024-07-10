@@ -3,7 +3,7 @@ export type Choice = {
     weightage: number
 }
 
-export type Question = {
+export type Quiz = {
     id: string
     question: string
     choices: Choice[]

@@ -1,9 +1,16 @@
 import Link from "next/link"
 import Image from "next/image"
 import { deleteQuestion } from "../actions/actions"
-import { Choice, Question } from "../types/types"
+import { Choice, Quiz } from "../types/types"
 
-export const Cards = ({ quiz } : { quiz: Question[]}) => {
+/**
+ * Cards component which shows question and choices.
+ *
+ * @component
+ * @param {Object} quiz - Information about the quiz comprises id, question and choices
+ */
+
+export const Cards = ({ quiz } : { quiz: Quiz[]}) => {
 
     return (
         quiz && quiz.map((q) => {

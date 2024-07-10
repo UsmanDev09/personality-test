@@ -1,6 +1,14 @@
     const MIN = 0;
     const MAX = 100;
 
+/**
+ * ProgressBar component to show the progress of quiz.
+ *
+ * @component
+ * @param {number} progress - Progress in percentage
+ * 
+ */
+
     export const ProgressBar = ({ progress } : { progress: number }) => {
 
         const clampedValue = Math.min(Math.max(progress, MIN), MAX);

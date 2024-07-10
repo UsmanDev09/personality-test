@@ -4,8 +4,8 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { LandingPage } from '@/app/components/LandingPage'
 import { Cards } from '@/app/components/Cards';
 import { Quiz } from '@/app/components/Quiz';
-import { CreateQuestionsForm } from '@/app/components/Questions/CreateQuestionsForm';
-import { EditQuestionsForm } from '@/app/components/Questions/EditQuestionsForm';
+import { CreateQuestionsForm } from '@/app/components/Forms/CreateQuestionsForm';
+import { EditQuestionsForm } from '@/app/components/Forms/EditQuestionsForm';
 import { Result } from '@/app/components/Result';
 import { Choices } from '@/app/components/Choices';
 import { ProgressBar } from '@/app/components/ProgressBar';
@@ -25,7 +25,6 @@ jest.mock('../app/actions/actions', () => ({
   updateQuestion: jest.fn(),
 
 }));
-
 
 describe('Landing Page', () => {
   it('renders a heading', () => {
@@ -297,7 +296,6 @@ describe('Quiz',  () => {
   });
 
 })
-
 
 describe('Create Question Form', () => {
   it('updates form state on input change', () => {

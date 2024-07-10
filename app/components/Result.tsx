@@ -7,6 +7,12 @@ const raleway = Raleway({
     subsets: ['latin'],
 })
 
+/**
+ * Result screen.
+ * @component
+ * @param {number} score - Score for computing introvert or extrovert
+*/
+
 export const Result = ({ score } : { score: number }) => {
     return ( 
         <div className={`flex flex-col justify-center items-center ${raleway.className}`}>
