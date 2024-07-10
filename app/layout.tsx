@@ -1,8 +1,12 @@
-'use client'
-
 import { Toaster } from "react-hot-toast";
 import { Navbar } from "./components/Navabr";
 import "./globals.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Personality test',
+  description: 'App for testing if you are an introvert or extrovert',
+}
 
 export default function RootLayout({
   children,
@@ -11,7 +15,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
+    <html lang="en" >
       <title>Personality test</title>
       <body>
         <Toaster
